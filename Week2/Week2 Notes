@@ -1,0 +1,86 @@
+#Local Coefficient Clustering
+G=nx.Graph()
+G.add_edges_from([('A','K'),('A','B'),('A','C'),('B','C'),('B','K'),('C','E'),
+('C','F'),('D','E'),('E','F'),('E','H'),('F','G'),('I','J')])
+nx.clustering(G,'F')
+
+#average clustering of whole network
+nx.average_clustering(G)
+
+#Transitivity - Ratio of number of triangles and number of open triads
+nx.transitivity(G)
+
+#Shortest Path
+nx.shortest_path(G,'A','H')
+
+nx.shortest_path_length(G,'A','H')
+
+#Breadth First search Tree
+T=nx.bfs_tree(G,'A')
+T.edges()
+nx.shortest_path_length(G,'A')
+
+#Average distance between 2 nodes
+nx.average_shortest_path_length(G)
+
+#Diameter
+nx.diameter(G)
+
+#Eccentricity
+nx.eccentricity(G)
+
+#radius
+nx.radius(G)
+
+#periphery
+nx.periphery(G)
+
+#Center
+nx.center(G)
+
+#Connectivity in Networks
+nx.is_connected(G)
+
+nx.number_connected_components(G)
+
+sorted(nx.connected_components(G))
+
+nx.node_connected_component(G,'M')
+
+nx.is_strongly_connected(G)
+nx.is_weakly_connected(G)
+
+sorted(nx.strongly_connected_components(G))
+sorted(nx.weakly_connected_components(G))
+
+
+#Robustness in Network
+#Removal of edges or nodes
+
+#Node connectivity - Number of nodes which can disconnect a network
+nx.node_connectivity(G_un)
+
+#Which node will disconnect
+nx.minimum_node_cut(G_un)
+
+#Smallest number of edges to make graph disconnected
+nx.edge_connectivity(G_un)
+
+#Which edges
+nx.minimum_edge_cut(G_un)
+
+
+#Deliver message from one node to another
+sorted(nx.all_simple_paths(G,'A','B'))
+
+#Nodes to remove to discnonnect paths between two nodes
+nx.node_connectivity(G,'A','B')
+
+#which nodes
+nx.minimum_node_cut(G,'A','B')
+
+#Edges to remove
+nx.edge_connectivity(G,'A','B')
+
+#which edges
+nx.minimum_edge_cut(G,'A','B')
